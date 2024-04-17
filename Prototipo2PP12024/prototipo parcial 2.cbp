@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Prototipo2PP12024" />
+		<Option title="prototipo parcial 2" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Prototipo2PP12024" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/prototipo parcial 2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Prototipo2PP12024" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/prototipo parcial 2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -34,9 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+<<<<<<< HEAD:Prototipo2PP12024/Prototipo2PP12024.cbp
 		<Unit filename="include/menugeneral.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/menugeneral.cpp" />
 		<Extensions />
+=======
+		<Unit filename="include/menuG.h" />
+		<Unit filename="include/usuario.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/menuG.cpp" />
+		<Unit filename="src/usuario.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+>>>>>>> 0861d65f4eb738398e0d2264aed6ec1a1906a934:Prototipo2PP12024/prototipo parcial 2.cbp
 	</Project>
 </CodeBlocks_project_file>

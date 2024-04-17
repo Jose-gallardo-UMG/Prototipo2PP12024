@@ -1,4 +1,4 @@
-#include "menugeneral.h"
+#include "menuG.h"
 #include<iostream>
 #include<fstream>
 #include<stdlib.h>

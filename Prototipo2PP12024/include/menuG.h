@@ -1,11 +1,15 @@
-#ifndef MENUGENERAL_H
-#define MENUGENERAL_H
+#include<fstream>
+#include<stdlib.h>
+#include<cstdlib>
+#include<conio.h>
+#include<iomanip>
 
+using namespace std;
 
-class menugeneral
+class menuG
 {
-   public:
-        menugeneral(string id, string nombre, string precio, string cantidad);
+    public:
+        menuG(string id, string nombre, string precio, string cantidad);
        string setId(string id);
         string getId();
 
@@ -33,4 +37,4 @@ class menugeneral
     string id,nombre,precio,cantidad;
 };
 
-#endif // MENUGENERAL_H
+
