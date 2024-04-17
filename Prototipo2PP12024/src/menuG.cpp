@@ -107,9 +107,9 @@ int opcion;
      cout <<"\t\t\t--------------------------------------------"<<endl;
     cout <<"\t\t\t |       BIENVENIDO AL MENU De USUARIOS     |"<<endl;
     cout <<"\t\t\t--------------------------------------------"<<endl;
-	cout<<"\t\t\t 1. Ingreso Nuevos (cosas)"<<endl;
-	cout<<"\t\t\t 2. Modificar (cosas)"<<endl;
-	cout<<"\t\t\t 3. Borrar (cosas)"<<endl;
+	cout<<"\t\t\t 1. Ingreso Nuevos "<<endl;
+	cout<<"\t\t\t 2. Modificar "<<endl;
+	cout<<"\t\t\t 3. Borrar"<<endl;
 	cout<<"\t\t\t 4. SALIR"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
@@ -199,13 +199,13 @@ void menuG::insertar()
     string id,nombre,precio,cantidad;
     cout<<"\n------------------------------------------------------------------------------------------------------------------------"<<endl;
     cout<<"\n-------------------------------------------------Agregar producto--------------------------------------------"<<endl;
-    cout << "\t\t\t\nIngrese el ID de (cosa):         ";
+    cout << "\t\t\t\nIngrese el ID del producto:         ";
     cin >> id;
-      cout << "\t\t\t\nIngrese el nombre de (cosa):         ";
+      cout << "\t\t\t\nIngrese el nombre del producto:         ";
     cin >> nombre;
-      cout << "\t\t\t\nIngrese el precio de (cosa):         ";
+      cout << "\t\t\t\nIngrese el precio del producto:         ";
     cin >> precio;
-      cout << "\t\t\t\nIngrese la cantidad (cosa):         ";
+      cout << "\t\t\t\nIngrese la cantidad del producto:         ";
     cin >> cantidad;
 
     // Abre el archivo "" en modo de apendizaje y escritura

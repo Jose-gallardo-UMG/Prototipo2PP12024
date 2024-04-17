@@ -5,6 +5,7 @@
 #include<cstdlib>
 #include<conio.h>
 #include<iomanip>
+
 using namespace std;
 
 usuario::usuario(string usuario, string contrasena)//parametros de la clase
@@ -33,7 +34,7 @@ string usuario::getContrasena()
     return this->contrasena;
 }
 
-//primer despliegue de pantalla
+//muestra el menu del login para ingresar
 bool usuario::VerificarUsuario()
 {
     string usuario,contrasena;
@@ -59,7 +60,7 @@ bool usuario::VerificarUsuario()
     char caracter;
     caracter = getch();
 
-    // ocultar a la hora de escribir la contraseña
+
     contrasena="";
         while (caracter!=13)
         {
@@ -79,12 +80,12 @@ bool usuario::VerificarUsuario()
             caracter=getch();
         }
 
-    //abrira el archivo de User y contraseñas--------------------------
+    //abrira el archivo de Usuario y contraseñas--------------------------
     ifstream fileU_P;
     fileU_P.open("usuarios_y_contrasenas.txt",ios::in);
 
 
-    //verificar si se abrio el archivo---------------------------
+    //verificar si se abrio el archivo
     if (!fileU_P)
     {
         cout<<"No es posible abrir el archivo."<<endl;
@@ -92,7 +93,7 @@ bool usuario::VerificarUsuario()
         return false;
     }
 
-    //busca el usuario en el archivo---------------------------------
+    //busca el usuario en el archivo
     string user,pass;
     while (fileU_P>>user>>pass)
     {
@@ -104,7 +105,7 @@ bool usuario::VerificarUsuario()
     }
      fileU_P.close();
 
-    //si no encuentra user y pass , el contador incrementara------------------------
+    //si no encuentra user y pass , el contador incrementara
     if(!encontrado)
     {
         cout << "\n\tUSUARIO Y/O CONTRASEÑA INCORRECTOS" << endl;
@@ -114,7 +115,7 @@ bool usuario::VerificarUsuario()
     }
 }
 
-    //Si encuentra a user y pass , se retornara un true
+    //Si encuentra a usuario y contraseña , se retornara un true
    if (encontrado)
     {
     cout << "\n\tBienvenido " << usuario << "!" << endl;
@@ -218,36 +219,36 @@ void usuario::IngresarUser()
 
     //ocultamiento de contraseña con caracteres
     char caracter;
-    caracter=getch();//gethc lee un solo caracter desde el teclado sin mostrarlo en la pantalla
+    caracter=getch();
     contrasena="";
 
-    while(caracter!=13)//el bucle se ejecutara hasta que la persona precione enter ya que 13 es el codigo en ASCII de esta tecla
+    while(caracter!=13)
     {
-        if (caracter !=8)//si el caracter no es BACK SPACE hara lo siguiente
+        if (caracter !=8)
         {
-            contrasena.push_back(caracter);//agrega el caracter ingresado hasta el final de la cadena "contraseña"
-            cout<<"*";//simbolo que imprimira en la consol
+            contrasena.push_back(caracter);
+            cout<<"*";
         }
-        else//si el caracter a presionar es Back space
+        else
         {
-         if(contrasena.length()>0)//si la cadena contraseña tiene menos de un caracter
+         if(contrasena.length()>0)
             {
-                cout<<"\b \b"; // borra el ultimo caracter ingresado  en la consola
-                contrasena=contrasena.substr(0,contrasena.length()-1); //elimina el ultimo caracter ingresado en contrasena
+                cout<<"\b \b";
+                contrasena=contrasena.substr(0,contrasena.length()-1);
             }
         }
-    caracter = getch(); // Lee el siguiente caracter ingresado por el usuario
+    caracter = getch();
     }
-    // Abre el archivo "" en modo de apendizaje y escritura
+
     fstream fileIngresarU;
     fileIngresarU.open("usuarios_y_contrasenas.txt",ios::app| ios:: out);
 
-    // Escribe en el archivo los datos del usuario ingresados por el usuario
+
     fileIngresarU<<std::left<<std::setw(15)<< usuario <<std::left <<std::setw(15)<< contrasena<<"\n";
 
-    //cierre del archivo
+
     fileIngresarU.close();
-    //mensaje de exito
+
 
     cout << "\t\t\t\nUsuario registrado exitosamente."<<endl;
 
@@ -267,22 +268,22 @@ fileDesplegar.open("usuarios_y_contrasenas.txt",ios::in);
 //condicion si el archivo no se puede abrir
 if(!fileDesplegar)
     {
-    cout<<"\n\t\t\tNo hay información..."; // muestra un mensaje de error
-		fileDesplegar.close(); // cierra el archivo
+    cout<<"\n\t\t\tNo hay información...";
+		fileDesplegar.close();
     }
 else
     {
-        fileDesplegar >> usuarios >> contrasena;//lee el primer registro del archivo
-        //condicion de seguir leyendo registrso hasta llegar al final del registro
+        fileDesplegar >> usuarios >> contrasena;
+
         while(!fileDesplegar.eof())
         {
-         total++;//contado de usuarios
+         total++;//contador
          cout<<"\t\t\t Nombre de usuario: "<<usuarios<<endl; // muestra el nombre del usuario
          cout<<"\t\t\t Contrasenaa del usuario: "<<contrasena<<endl<<endl<<endl; // muestra la contraseña del usuario
         fileDesplegar>> usuarios >> contrasena;//leera el siguiente registro del archivo
         }
 
-        if(total==0)//si no llegara a encontrar ningun registro en el archivo
+        if(total==0)
         {
             cout<<"\n\t\t\tNo hay informacion..."; // muestra un mensaje de error
         }
@@ -293,46 +294,46 @@ else
 void usuario::ModificarUser()
 {
 	system("cls");
-    fstream fileOri, fileModif;  // Se crean dos objetos de archivo para leer y escribir en archivos de texto
-    string UsuarioModificar;  // Se define una cadena para almacenar el nombre del usuario a modificar
+    fstream fileOri, fileModif;
+    string UsuarioModificar;
 
-    int contador=0;  // Se define una variable para contar si se encuentra el usuario en el archivo
-    cout<<"\n-------------------------Modificacion de Usuarios-------------------------"<<endl;  // Muestra un mensaje en pantalla
-    fileOri.open("usuarios_y_contrasenas.txt",ios::in);  // Abre el archivo de texto en modo lectura
+    int contador=0;
+    cout<<"\n-------------------------Modificacion de Usuarios-------------------------"<<endl;
+    fileOri.open("usuarios_y_contrasenas.txt",ios::in);
 
-    if(!fileOri)  // Si el archivo no se pudo abrir
+    if(!fileOri)
     {
-        cout<<"\n\t\t\tNo hay informacion..,";  // Muestra un mensaje en pantalla
-        fileOri.close();  // Cierra el archivo
+        cout<<"\n\t\t\tNo hay informacion..,";
+        fileOri.close();
     }
     else  // Si el archivo se pudo abrir
     {
-        cout<<"\n Ingrese el nombre del Usuario que quiere modificar: ";  // Muestra un mensaje en pantalla para ingresar el usuario a modificar
-        cin>>UsuarioModificar;  // Lee el nombre del usuario a modificar
-        fileModif.open("record.txt",ios::app | ios::out);  // Abre otro archivo de texto en modo escritura y agrega el contenido al final del archivo
-        fileOri >> usuarios>> contrasena;  // Lee el primer usuario y contraseña del archivo
+        cout<<"\n Ingrese el nombre del Usuario que quiere modificar: ";
+        cin>>UsuarioModificar;
+        fileModif.open("record.txt",ios::app | ios::out);
+        fileOri >> usuarios>> contrasena;
 
-        while(!fileOri.eof())  // Mientras no se llegue al final del archivo
+        while(!fileOri.eof())
         {
-            if(UsuarioModificar!=usuarios)  // Si el usuario no es el que se quiere modificar
+            if(UsuarioModificar!=usuarios)
                 {
-                fileModif<<std::left<<std::setw(15)<< usuarios <<std::left<<std::setw(15)<< contrasena << "\n";  // Escribe en el archivo temporal el usuario y contraseña sin modificar
+                fileModif<<std::left<<std::setw(15)<< usuarios <<std::left<<std::setw(15)<< contrasena << "\n";
 
 
                 }
 
-            else  // Si se encuentra el usuario a modificar
+            else
                 {
                 cout << "\t\t\t\nIngrese el nuevo nombre de usuario:         ";
                 cin >> usuarios;
                 cout << "\t\t\t\nIngrese la nueva contrasena:         ";
                 cin >> contrasena;
-                fileModif<<std::left<<std::setw(15)<< usuarios <<std::left<<std::setw(15)<< contrasena << "\n";  // Escribe en el archivo temporal el usuario y contraseña modificados
-                contador++;  // Incrementa el contador de usuarios modificados
+                fileModif<<std::left<<std::setw(15)<< usuarios <<std::left<<std::setw(15)<< contrasena << "\n";
+                contador++;
                 cout << "\t\t\t\nUsuario Modificado exitosamente.";
                 }
 
-            fileOri >> usuarios >> contrasena;  // Lee el siguiente usuario y contraseña del archivo
+            fileOri >> usuarios >> contrasena;
         }
 
         fileModif.close();  // Cierra el archivo temporal

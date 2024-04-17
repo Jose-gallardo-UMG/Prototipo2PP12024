@@ -1,3 +1,8 @@
+//Jose Eduardo Gallardo Del Cid
+//parcial 2
+//variante A
+
+
 #include <iostream>
 #include <usuario.h>
 #include<menuG.h>
@@ -5,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    //variables de user y contraseñan
+    //variables de usuario y contraseñan
     string user,contrasena;
     //llmamos al objeto e ingresamos los parametros
     usuario ingreso(user,contrasena);
@@ -51,7 +56,7 @@ int main()
     case 3:
         exit(0);
 	default:
-		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
+		cout<<"\n\t\t\t Opcion no valida intente otra vez..";
         break;}
         }while(opcion!= 3);
 
