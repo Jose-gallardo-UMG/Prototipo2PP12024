@@ -29,7 +29,7 @@ int main()
 
     cout <<"\t\t\t--------------------------------------------"<<endl;
     cout <<"\t\t\t |       BIENVENIDO AL MENU PRINCIPAL      |"<<endl;
-    cout <<"\t\t\t |Nombre: jose Eduardo Gallardo Del Cid    |"<<endl;
+    cout <<"\t\t\t |Nombre: Jose Eduardo Gallardo Del Cid    |"<<endl;
     cout <<"\t\t\t |Carne: 9959-23-106                     |"<<endl;
     cout <<"\t\t\t--------------------------------------------"<<endl;
 	cout<<"\t\t\t 1. Ingreso Al Menu de Usurios"<<endl;
