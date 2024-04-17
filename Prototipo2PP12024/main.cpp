@@ -29,11 +29,11 @@ int main()
 
     cout <<"\t\t\t--------------------------------------------"<<endl;
     cout <<"\t\t\t |       BIENVENIDO AL MENU PRINCIPAL      |"<<endl;
-    cout <<"\t\t\t |Nombre: Victor Omar Gomez Carrascosa|"<<endl;
-    cout <<"\t\t\t |Carne: 9959-23-10733                      |"<<endl;
+    cout <<"\t\t\t |Nombre: Jose Eduardo Gallardo Del Cid    |"<<endl;
+    cout <<"\t\t\t |Carne: 9959-23-106                       |"<<endl;
     cout <<"\t\t\t--------------------------------------------"<<endl;
-	cout<<"\t\t\t 1. Ingreso Al Menu de Usurios"<<endl;
-	cout<<"\t\t\t 2. Ingreso Al Menu de Catalogos"<<endl;
+	cout<<"\t\t\t 1. Menu de Usuarios"<<endl;
+	cout<<"\t\t\t 2. Menu de Catalogos"<<endl;
 	cout<<"\t\t\t 3. Exit"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
