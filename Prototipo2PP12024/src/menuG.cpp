@@ -165,27 +165,27 @@ int total=0;
 cout<<"\n-------------------------Tabla de Registrados-------------------------"<<endl;
 fstream fileDesplegar;
 fileDesplegar.open("catalogos.txt",ios::in);
-//condicion si el archivo no se puede abrir
+
 if(!fileDesplegar)
     {
-    cout<<"\n\t\t\tNo hay información..."; // muestra un mensaje de error
-		fileDesplegar.close(); // cierra el archivo
+    cout<<"\n\t\t\tNo hay información...";
+		fileDesplegar.close();
     }
 else
     {
-        fileDesplegar >> id>> nombre>>precio>>cantidad;//lee el primer registro del archivo
-        //condicion de seguir leyendo registrso hasta llegar al final del registro
+        fileDesplegar >> id>> nombre>>precio>>cantidad;
+
         while(!fileDesplegar.eof())
         {
-         total++;//contado de usuarios
-         cout<<"\t\t\t ID "<<id<<endl; // muestra el nombre del usuario
+         total++;
+         cout<<"\t\t\t ID "<<id<<endl;
          cout<<"\t\t\t NOMBRE: "<<nombre<<endl;
          cout<<"\t\t\t PRECIO: "<<precio<<endl;
         cout<<"\t\t\t CANTIDAD: "<<cantidad<<endl<<endl<<endl;
-        fileDesplegar >> id>> nombre>>precio>>cantidad;//leera el siguiente registro del archivo
+        fileDesplegar >> id>> nombre>>precio>>cantidad;
         }
 
-        if(total==0)//si no llegara a encontrar ningun registro en el archivo
+        if(total==0)
         {
             cout<<"\n\t\t\tNo hay informacion..."; // muestra un mensaje de error
         }
@@ -208,16 +208,16 @@ void menuG::insertar()
       cout << "\t\t\t\nIngrese la cantidad del producto:         ";
     cin >> cantidad;
 
-    // Abre el archivo "" en modo de apendizaje y escritura
+
     fstream fileIngresar;
     fileIngresar.open("catalogos.txt",ios::app| ios:: out);
 
-    // Escribe en el archivo los datos del usuario ingresados por el usuario
+
     fileIngresar<<std::left<<std::setw(15)<< id <<std::left <<std::setw(15)<< nombre<<std::left <<std::setw(15)<< precio<<std::left <<std::setw(15)<< cantidad<<"\n";
 
-    //cierre del archivo
+
     fileIngresar.close();
-    //mensaje de exito
+
 
     cout << "\t\t\t\nregistrado exitosamente."<<endl;
 
@@ -228,30 +228,30 @@ void menuG::modificar()
 {
 
 	system("cls");
-    fstream fileOri, fileModif;  // Se crean dos objetos de archivo para leer y escribir en archivos de texto
-    string productoModificar;  // Se define una cadena para almacenar el nombre del usuario a modificar
+    fstream fileOri, fileModif;
+    string productoModificar;
 
-    int contador=0;  // Se define una variable para contar si se encuentra el usuario en el archivo
-    cout<<"\n-------------------------Modificacion de cosas-------------------------"<<endl;  // Muestra un mensaje en pantalla
-    fileOri.open("catalogos.txt",ios::in);  // Abre el archivo de texto en modo lectura
+    int contador=0;
+    cout<<"\n-------------------------Modificacion de cosas-------------------------"<<endl;
+    fileOri.open("catalogos.txt",ios::in);
 
     if(!fileOri)  // Si el archivo no se pudo abrir
     {
-        cout<<"\n\t\t\tNo hay informacion..,";  // Muestra un mensaje en pantalla
-        fileOri.close();  // Cierra el archivo
+        cout<<"\n\t\t\tNo hay informacion..,";
+        fileOri.close();
     }
-    else  // Si el archivo se pudo abrir
+    else
     {
-        cout<<"\n Ingrese el nombre del producto que quiere modificar: ";  // Muestra un mensaje en pantalla para ingresar el usuario a modificar
-        cin>>productoModificar;  // Lee el nombre del usuario a modificar
-        fileModif.open("record2.txt",ios::app | ios::out);  // Abre otro archivo de texto en modo escritura y agrega el contenido al final del archivo
-        fileOri >> id>> nombre>>precio>>cantidad;  // Lee el primer usuario y contraseña del archivo
+        cout<<"\n Ingrese el nombre del producto que quiere modificar: ";
+        cin>>productoModificar;
+        fileModif.open("record2.txt",ios::app | ios::out);
+        fileOri >> id>> nombre>>precio>>cantidad;
 
-        while(!fileOri.eof())  // Mientras no se llegue al final del archivo
+        while(!fileOri.eof())
         {
-            if(productoModificar!=nombre)  // Si el usuario no es el que se quiere modificar
+            if(productoModificar!=nombre)
                 {
-                fileModif<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< precio<<std::left<<std::setw(15)<< cantidad<<"\n";  // Escribe en el archivo temporal el usuario y contraseña sin modificar
+                fileModif<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< precio<<std::left<<std::setw(15)<< cantidad<<"\n";
 
 
                 }
@@ -266,7 +266,7 @@ void menuG::modificar()
                 cin >> precio;
                 cout << "\t\t\t\nIngrese la nueva cantidad:         ";
                 cin >> cantidad;
-                fileModif<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< precio<<std::left<<std::setw(15)<< cantidad<<"\n";  // Escribe en el archivo temporal el usuario y contraseña sin modificar
+                fileModif<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre<<std::left<<std::setw(15)<< precio<<std::left<<std::setw(15)<< cantidad<<"\n";
                 contador++;  // Incrementa el contador de usuarios modificados
                 cout << "\t\t\t\nUsuario Modificado exitosamente.";
                 }
